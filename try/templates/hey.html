@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+{%load staticfiles%}
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <title>USERS</title>
+    <h1>Here is the list of users</h1>
+</head>
+<body>
+  <div class="container">
+    {% if newr %}
+    <table class="table table-inverse">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+</thead>
+  {%for ac in newr%}
+<tbody>
+  <tr>
+    <th scope="row">{{ac.num}}</th>
+    <td>{{ac.First}}</td>
+    <td>{{ac.Last}}</td>
+    <td>{{ac.email}}</td>
+  </tr>
+  {%endfor%}
+</tbody>
+</table>
+  {% else %}
+    <p>No paragraph to print</p>
+  {% endif %}
+  </div>
+</body>
+</HTML>
